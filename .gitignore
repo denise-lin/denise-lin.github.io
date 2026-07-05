@@ -1,0 +1,11 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# astro
+.astro/
+# os
+.DS_Store
+# env
+.env
+.env.production

@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** When true, emit noindex,nofollow and skip canonical (used for /anduril). */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Denise Lin — sustainability and program leadership, with budget and cost-performance ownership across complex public-sector programs.',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? (
+      <meta name="robots" content="noindex,nofollow" />
+    ) : (
+      <link rel="canonical" href={canonical} />
+    )}
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#003262" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23003262'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23FDB515' text-anchor='middle'%3EDL%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main id="main">
+      <slot />
+    </main>
+  </body>
+</html>

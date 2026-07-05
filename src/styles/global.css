@@ -1,0 +1,152 @@
+/* ============================================================
+   Design tokens — Berkeley palette (see implementation brief §5)
+   ============================================================ */
+:root {
+  --berkeley-blue: #003262;   /* primary — deep navy */
+  --berkeley-blue-700: #062a4f;
+  --california-gold: #fdb515; /* accent — use sparingly */
+  --gold-deep: #c8870a;       /* gold dark enough for AA text on paper */
+  --ink: #1a1a1a;             /* body text */
+  --paper: #fcfbf8;           /* warm off-white background */
+  --paper-2: #f4f1ea;         /* slightly deeper panel fill */
+  --muted: #5b6770;           /* secondary text (AA on paper) */
+  --hairline: #e3ddd1;        /* warm rule color */
+  --dark-magenta: #6b2d5c;    /* spare alternate accent */
+
+  --serif: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052,
+    Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+
+  --measure: 66ch;
+  --page-max: 760px;
+  --wide-max: 1040px;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --step-3: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --step-4: clamp(2.6rem, 2rem + 3vw, 4.2rem);
+}
+
+/* ============================================================ Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+iframe {
+  max-width: 100%;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--berkeley-blue);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+p {
+  margin: 0 0 1.1em;
+  max-width: var(--measure);
+}
+a {
+  color: var(--berkeley-blue);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+a:hover {
+  text-decoration-color: var(--california-gold);
+  text-decoration-thickness: 2px;
+}
+
+/* ============================================================ Layout */
+.wrap {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+.wrap--wide {
+  max-width: var(--wide-max);
+}
+
+/* Accessibility: visible focus + skip link */
+:focus-visible {
+  outline: 3px solid var(--gold-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--berkeley-blue);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ============================================================ Eyebrow */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
+.eyebrow--gold {
+  color: var(--gold-deep);
+}
+
+/* Gold tick — a small accent rule */
+.tick {
+  width: 2.5rem;
+  height: 3px;
+  background: var(--california-gold);
+  border: 0;
+  margin: 0 0 1.6rem;
+}
+
+/* ============================================================ Footer */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+  padding-block: 2rem 3rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.site-footer p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

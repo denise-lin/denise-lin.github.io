@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Denise Lin">
+  <header class="hero wrap">
+    <p class="eyebrow">Sustainability &amp; Program Leadership</p>
+    <h1 class="hero__name">Denise Lin</h1>
+    <hr class="tick" />
+    <p class="hero__lede">
+      I lead clean-infrastructure programs in the public sector, owning budgets
+      and cost performance across complex, cross-functional work, and bringing
+      electrification projects from planning to delivery.
+    </p>
+  </header>
+
+  <section class="wrap section" aria-labelledby="about-h">
+    <h2 id="about-h" class="section__h">About</h2>
+    <p>
+      I have eight years of experience owning budgets and cost performance across
+      complex, cross-functional programs in regulated environments. Today I lead
+      electrification and infrastructure work for the City of Mountain View,
+      where I forecast and plan for funding needs proactively, putting the City
+      on track to increase its fleet EV charger installations sevenfold by 2029.
+    </p>
+    <p>
+      Earlier, as a Sustainability Specialist for San Mateo County, I led a
+      working group of 20 municipalities, giving teams access to
+      performance-tracking tools and leading regional initiatives such as
+      policies and grant applications, and coordinating across regulatory,
+      facilities, and operations teams to deliver 60 EV charging stations.
+    </p>
+  </section>
+
+  <section class="wrap section" aria-labelledby="focus-h">
+    <h2 id="focus-h" class="section__h">What I work on</h2>
+    <ul class="focus">
+      <li>
+        <span class="focus__k">Electrification &amp; infrastructure</span>
+        <span class="focus__v"
+          >Capital improvement planning and fleet charging deployments, delivered
+          on schedule and under budget.</span
+        >
+      </li>
+      <li>
+        <span class="focus__k">Budget &amp; cost ownership</span>
+        <span class="focus__v"
+          >Forecasting funding needs, tracking spend against plan, and securing
+          rebates and grants to stretch public dollars.</span
+        >
+      </li>
+      <li>
+        <span class="focus__k">Cross-functional programs</span>
+        <span class="focus__v"
+          >Aligning engineering, facilities, and operations teams (and regional
+          partners) around shared sustainability goals.</span
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap section" aria-labelledby="edu-h">
+    <h2 id="edu-h" class="section__h">Education</h2>
+    <dl class="edu">
+      <div class="edu__row">
+        <dt>University of California, Berkeley, Haas School of Business</dt>
+        <dd>
+          Master of Business Administration · Forté Fellow
+          <span class="edu__year">2026</span>
+        </dd>
+      </div>
+      <div class="edu__row">
+        <dt>University of California, Los Angeles</dt>
+        <dd>
+          B.S., Environmental Science
+          <span class="edu__year">2016</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="contact">
+        <a href="mailto:deniselihanlin@gmail.com">deniselihanlin@gmail.com</a>
+        <span aria-hidden="true" class="dot">·</span>
+        <a
+          href="https://www.linkedin.com/in/denise-lin"
+          rel="me noopener"
+          target="_blank">LinkedIn</a
+        >
+      </p>
+      <p class="copyright">&copy; {new Date().getFullYear()} Denise Lin</p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(4rem, 12vw, 8rem);
+    padding-bottom: clamp(1rem, 4vw, 2rem);
+  }
+  .hero__name {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+  .hero__lede {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 34ch;
+  }
+
+  .section {
+    padding-block: clamp(1.6rem, 4vw, 2.4rem);
+  }
+  .section__h {
+    font-size: var(--step-2);
+    margin-bottom: 0.9rem;
+  }
+
+  .focus {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.4rem;
+    max-width: var(--measure);
+  }
+  .focus li {
+    display: grid;
+    gap: 0.2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--california-gold);
+  }
+  .focus__k {
+    font-weight: 600;
+    color: var(--berkeley-blue);
+  }
+  .focus__v {
+    color: var(--muted);
+  }
+
+  .edu {
+    margin: 0;
+    display: grid;
+    gap: 1.1rem;
+    max-width: var(--measure);
+  }
+  .edu__row dt {
+    font-weight: 600;
+    color: var(--berkeley-blue);
+  }
+  .edu__row dd {
+    margin: 0.15rem 0 0;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .edu__year {
+    font-variant-numeric: tabular-nums;
+    color: var(--gold-deep);
+    font-weight: 600;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.4rem !important;
+  }
+  .contact .dot {
+    color: var(--hairline);
+  }
+  .copyright {
+    color: var(--muted);
+  }
+</style>

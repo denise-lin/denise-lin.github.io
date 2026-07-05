@@ -1,0 +1,83 @@
+---
+// Responsive wrapper around a OneDrive Office embed.
+// The iframe `src` and `title` are passed verbatim from the brief (§3e) and must
+// not be altered — the query params control the active cell, hidden gridlines, etc.
+interface Props {
+  src: string;
+  title: string;
+  caption: string;
+  hero?: boolean;
+  /** Iframe display height in px (the embed reflows to fill the wider frame). */
+  height?: number;
+}
+const { src, title, caption, hero = false, height = 480 } = Astro.props;
+---
+
+<figure class={`embed${hero ? ' embed--hero' : ''}`}>
+  <div class="embed__frame">
+    <iframe
+      class="embed__iframe"
+      width="402"
+      height="346"
+      frameborder="0"
+      scrolling="no"
+      loading="lazy"
+      style={`--embed-h:${height}px`}
+      title={title}
+      src={src}></iframe>
+  </div>
+  <figcaption class="embed__cap">
+    <span class="embed__live" aria-hidden="true"></span>
+    {caption}
+  </figcaption>
+</figure>
+
+<style>
+  .embed {
+    margin: 1.4rem 0 0;
+  }
+  .embed__frame {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--berkeley-blue);
+    border-radius: 8px;
+    padding: clamp(0.6rem, 1.5vw, 1rem);
+    box-shadow: 0 1px 2px rgba(0, 50, 98, 0.05),
+      0 18px 40px -24px rgba(0, 50, 98, 0.4);
+    width: 100%;
+  }
+  .embed--hero .embed__frame {
+    border-top-color: var(--california-gold);
+  }
+  /* Override the iframe's fixed 402px width so it fills the frame and never
+     overflows on mobile; height comes from the --embed-h custom prop. */
+  .embed__iframe {
+    display: block;
+    width: 100%;
+    height: var(--embed-h, 480px);
+    border: 0;
+    border-radius: 4px;
+  }
+  /* Keep the embed comfortable on small screens. */
+  @media (max-width: 600px) {
+    .embed__iframe {
+      height: clamp(360px, 78vh, var(--embed-h, 480px));
+    }
+  }
+  .embed__cap {
+    margin-top: 0.7rem;
+    font-size: var(--step--1);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .embed__live {
+    flex: none;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--california-gold);
+    box-shadow: 0 0 0 3px rgba(253, 181, 21, 0.22);
+  }
+</style>

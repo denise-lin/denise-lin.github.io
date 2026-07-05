@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /anduril
+
+Sitemap: https://deniselin.com/sitemap-index.xml
