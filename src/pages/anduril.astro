@@ -1,38 +1,27 @@
 ---
 import Base from '../layouts/Base.astro';
-import SheetEmbed from '../components/SheetEmbed.astro';
 
-const fordSrc =
-  "https://1drv.ms/x/c/1ab10ce1b91949c7/IQSfbkaNrLC9Q4gMSuvRxNr_AdZuC4Ru8pcFK8ov2DKisTw?em=2&AllowTyping=True&ActiveCell='Ford%20Financial%20Model%202022-2030'!B2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0";
-const dropboxSrc =
-  "https://1drv.ms/x/c/1ab10ce1b91949c7/IQQrllCFDWAFR6IhtDzk43RIAVF-xxOswY-LxTKtQZmbXN8?em=2&AllowTyping=True&ActiveCell='Buyback'!B2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0";
-
-// "The fit, in her words" — each label is a generic finance competency; the
-// load-bearing sentence under it is lifted/tightened from Denise's resume / report.
-const fit = [
+const cards = [
   {
-    k: 'Budgets and forecasts',
-    v: 'I direct a $5M+ portfolio: securing funding, tracking budgets, and forecasting needs proactively to attain operational savings.',
+    href: 'https://denise-lin.github.io/defense-bom/',
+    img: '/images/drone-icon.png',
+    imgAlt: 'Drone icon',
+    title: 'Defense: Bill of Materials & Cost Element Structure',
+    body: 'I built a Bill of Materials and Cost Element Structure model to demonstrate my approach to bottoms-up financial analyses, cost reduction recommendations, and program planning.',
   },
   {
-    k: 'Growth enablement',
-    v: 'I planned for capital needs proactively, bringing the City on track to 7x its EV charging by 2029.',
+    href: '/ford',
+    img: '/images/ford-logo.png',
+    imgAlt: 'Ford logo',
+    title: 'Ford Motor Co.: Financial Forecast Model',
+    body: 'I designed a multi-year financial forecast for Ford Motor Company showing how I interpret historical financial statements and establish credible assumptions to project company performance.',
   },
   {
-    k: 'Financial modeling',
-    v: 'Scenario, financial, and equity-valuation modeling: building assumptions and triangulating between bottoms-up analysis, street consensus, and research.',
-  },
-  {
-    k: 'Preserve capital',
-    v: 'I delivered $560K in building upgrades across 86% of City sites at zero capital cost through an incentive program, freeing cash for other investments.',
-  },
-  {
-    k: 'Finance for non-experts',
-    v: 'For stakeholders without a finance background, I anchor metrics to benchmarks: Ford’s margin against its competitors’ tells the real story.',
-  },
-  {
-    k: 'Process improvement',
-    v: 'I secured 100% executive buy-in on a new organization-wide vehicle procurement standard.',
+    href: '/dropbox',
+    img: '/images/dropbox-logo.webp',
+    imgAlt: 'Dropbox logo',
+    title: 'Dropbox: Share Buyback Sensitivity Model',
+    body: 'I built a share buyback sensitivity model, showing how earnings per share respond to changes in interest rate on debt and share price.',
   },
 ];
 ---
@@ -45,123 +34,30 @@ const fit = [
     <p class="hero__lede">
       Eight years owning budgets and cost performance across complex,
       cross-functional programs. I direct a $5M+ portfolio at the City of
-      Mountain View: securing funding, tracking budgets, and working with senior
-      leadership to attain operational
-      savings. Now a Berkeley Haas MBA, I&rsquo;m seeking a Financial Analyst
-      position at Anduril because I&rsquo;m passionate about its mission. Let me
-      show you how my financial planning and analysis skills can drive cost
-      savings, growth, and financial stability.
+      Mountain View: securing funding, tracking budgets, and working with
+      senior leadership to attain operational savings. Now a Berkeley Haas
+      MBA, I&rsquo;m seeking a Financial Analyst role at Anduril because
+      I&rsquo;m passionate about its mission. Here are some of my financial
+      analysis projects.
     </p>
   </header>
 
-  <!-- Portfolio first: two live models do the persuading. -->
-  <section class="wrap wrap--wide portfolio" aria-labelledby="port-h">
-    <p class="eyebrow eyebrow--gold">Portfolio</p>
-    <h2 id="port-h" class="portfolio__h">Two models I built: live, and yours to poke at</h2>
-    <p class="portfolio__intro">
-      The clearest way I can show how I think about a forecast is to hand you the
-      actual workbooks. These are two models I built, one for Ford Model Co. and
-      one for Dropbox, for my Financial Information Analysis class. Both are
-      interactive, with the dark blue font indicating hardcoded cells that change
-      the model. Feel free to change assumptions and see how the model responds.
-    </p>
-
-    <div class="spotlight spotlight--hero">
-      <div class="spotlight__copy">
-        <p class="eyebrow">Spotlight &middot; Ford Motor Co.</p>
-        <h3 class="spotlight__h">A forecast is only as good as its assumptions</h3>
-        <p>
-          Automotive manufacturing is very expensive, and Cost of Goods Sold as a
-          percentage of revenue is the critical assumption. Historical COGS / %
-          Revenue has ranged from 86&ndash;88% in the past few years.
-        </p>
-        <blockquote class="pull">
-          &ldquo;Consensus sat at 77% for the 2026 forecast, but this seemed way
-          too optimistic for me; I selected 85% to consider the efforts
-          management is making in increasing efficiencies, without falling too
-          much outside of the demonstrated historical range.&rdquo;
-        </blockquote>
-        <div class="stat">
-          <div class="stat__pair">
-            <span class="stat__num">~$14B</span>
-            <span class="stat__lbl">My 2026 EBITDA, at 85% COGS</span>
-          </div>
-          <span class="stat__vs" aria-hidden="true">vs.</span>
-          <div class="stat__pair stat__pair--muted">
-            <span class="stat__num">$29B</span>
-            <span class="stat__lbl">The street, at 77% COGS</span>
-          </div>
-        </div>
-        <p>
-          The street number would have landed at $29 billion, which is not
-          really justifiable, as it is almost 3.5&times; the previous
-          year&rsquo;s EBITDA. The active cell below holds that COGS assumption;
-          change it and watch EBITDA move.
-        </p>
-      </div>
-      <div class="spotlight__embed">
-        <SheetEmbed
-          hero={true}
-          height={600}
-          src={fordSrc}
-          title="Ford Motor Co. financial forecast model, 2022–2030, built by Denise Lin"
-          caption="Live model: Ford Motor Co. financial forecast, 2022–2030"
-        />
-      </div>
-    </div>
-
-    <p class="aside">
-      Finding the right inputs was its own challenge: different companies present
-      financial statements differently. In Ford&rsquo;s case, multiple items were
-      bundled in the SG&amp;A line of the income statement provided by Factset, so
-      I downloaded Ford&rsquo;s 10-K to find the correct line items for the
-      analysis.
-    </p>
-
-    <div class="spotlight">
-      <div class="spotlight__copy">
-        <p class="eyebrow">Supporting model &middot; Dropbox</p>
-        <h3 class="spotlight__h">Share buyback</h3>
-        <p>
-          A Dropbox buyback of 10% of shares outstanding, debt-financed at a 10%
-          interest rate, lifts EPS only 1% while Debt/EBITDA jumps 16%. The
-          result is increased liability and balance-sheet risk for a negligible
-          per-share reward, making a debt-financed buyback unattractive at this
-          cost of debt.
-        </p>
-      </div>
-      <div class="spotlight__embed">
-        <SheetEmbed
-          height={520}
-          src={dropboxSrc}
-          title="Dropbox share-buyback EPS and leverage sensitivity model, built by Denise Lin"
-          caption="Live model: Dropbox share-buyback sensitivity"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap wrap--wide section" aria-labelledby="fit-h">
-    <h2 id="fit-h" class="section__h">The fit, in my words</h2>
-    <dl class="fit">
+  <section class="wrap wrap--wide picks" aria-label="Project picks">
+    <div class="picks__grid">
       {
-        fit.map((item) => (
-          <div class="fit__row">
-            <dt class="fit__k">{item.k}</dt>
-            <dd class="fit__v">{item.v}</dd>
-          </div>
+        cards.map((c) => (
+          <a class="pick" href={c.href}>
+            <span class="pick__imgwrap">
+              <img class="pick__img" src={c.img} alt={c.imgAlt} loading="lazy" />
+            </span>
+            <span class="pick__body">
+              <span class="pick__title">{c.title}</span>
+              <span class="pick__text">{c.body}</span>
+            </span>
+          </a>
         ))
       }
-    </dl>
-  </section>
-
-  <section class="wrap section close" aria-labelledby="close-h">
-    <h2 id="close-h" class="section__h">The lesson I&rsquo;ll carry</h2>
-    <p class="close__line">
-      Don&rsquo;t take research reports at face value: dig into the assumptions
-      and see if you agree. And if your view differs from consensus, back it up
-      with data and a hypothesis.
-    </p>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -175,6 +71,13 @@ const fit = [
           target="_blank">LinkedIn</a
         >
       </p>
+      <p class="credits">
+        Ford logo: <a href="https://en.wikipedia.org/wiki/Ford_of_Britain#/media/File:Ford_logo_flat.svg" rel="noopener" target="_blank">Wikipedia</a>
+        <span aria-hidden="true" class="dot">&middot;</span>
+        Dropbox logo: <a href="https://www.pcmag.com/reviews/dropbox" rel="noopener" target="_blank">PCMag</a>
+        <span aria-hidden="true" class="dot">&middot;</span>
+        Drone icon: <a href="https://www.flaticon.com/free-icons/military" title="military icons" rel="noopener" target="_blank">Military icons created by max.icons - Flaticon</a>
+      </p>
     </div>
   </footer>
 </Base>
@@ -187,7 +90,6 @@ const fit = [
   .hero__name {
     font-size: var(--step-3);
   }
-  /* Wider, slightly smaller intro per feedback. */
   .hero__lede {
     font-size: clamp(1.05rem, 1rem + 0.35vw, 1.22rem);
     line-height: 1.5;
@@ -195,156 +97,84 @@ const fit = [
     color: var(--ink);
   }
 
-  .section {
-    padding-block: clamp(1.8rem, 4.5vw, 2.8rem);
+  .picks {
+    padding-block: clamp(1.5rem, 4vw, 2.6rem) clamp(2rem, 5vw, 3.5rem);
   }
-  .section__h {
-    font-size: var(--step-2);
-    margin-bottom: 1rem;
-  }
-
-  /* ---------- Portfolio ---------- */
-  .portfolio {
-    padding-block: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 4vw, 2.6rem);
-  }
-  .portfolio__h {
-    font-size: var(--step-2);
-    margin-bottom: 0.6rem;
-    max-width: none;
-  }
-  .portfolio__intro {
-    color: var(--muted);
-    max-width: 82ch;
-    margin-bottom: 2rem;
-  }
-
-  /* Narrative on top; the live embed spans the full card width below it
-     so the spreadsheet has room to breathe. */
-  .spotlight {
-    padding: clamp(1.4rem, 3vw, 2.2rem);
-    background: var(--paper-2);
-    border-radius: 12px;
-    margin-bottom: 1.6rem;
-  }
-  .spotlight--hero {
-    border: 1px solid var(--hairline);
-    border-top: 3px solid var(--california-gold);
-  }
-  .spotlight__copy > :first-child {
-    margin-top: 0;
-  }
-  .spotlight__copy p {
-    max-width: 82ch;
-  }
-  .spotlight__h {
-    font-size: var(--step-1);
-    color: var(--berkeley-blue);
-    margin-bottom: 0.8rem;
-  }
-  .spotlight__embed {
-    margin-top: 1.6rem;
-  }
-
-  .pull {
-    margin: 1.3rem 0;
-    padding: 0 0 0 1.2rem;
-    border-left: 3px solid var(--berkeley-blue);
-    font-family: var(--serif);
-    font-size: var(--step-1);
-    line-height: 1.4;
-    color: var(--berkeley-blue);
-    max-width: 68ch;
-  }
-
-  /* Pulled EBITDA stat — the accent moment. */
-  .stat {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.8rem 1.4rem;
-    margin: 1.4rem 0;
-    padding: 1.1rem 1.3rem;
-    background: #fff;
-    border: 1px solid var(--hairline);
-    border-radius: 8px;
-    max-width: 46rem;
-  }
-  .stat__pair {
+  .picks__grid {
     display: grid;
-    gap: 0.2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.4rem;
   }
-  .stat__num {
-    font-family: var(--serif);
-    font-size: var(--step-2);
-    line-height: 1;
-    color: var(--berkeley-blue);
-    font-variant-numeric: tabular-nums;
-  }
-  .stat__pair--muted .stat__num {
-    color: var(--muted);
-  }
-  .stat__lbl {
-    font-size: var(--step--1);
-    color: var(--muted);
-  }
-  .stat__vs {
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--gold-deep);
-    font-size: var(--step-1);
-  }
-
-  /* Plain text (no card), full container width so it lines up with the
-     spotlight cards above/below. */
-  .aside {
-    margin: 0 0 1.6rem;
-    padding: 0 clamp(1.4rem, 3vw, 2.2rem);
-    color: var(--muted);
-    font-size: var(--step--1);
-    max-width: none;
-  }
-
-  /* ---------- The fit — two columns, condensed ---------- */
-  .fit {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem 2.4rem;
-  }
-  .fit__row {
-    padding-left: 1rem;
-    border-left: 2px solid var(--hairline);
-  }
-  .fit__row:nth-child(odd) {
-    border-left-color: var(--california-gold);
-  }
-  .fit__k {
-    font-family: var(--sans);
-    font-size: var(--step--1);
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-weight: 700;
-    color: var(--berkeley-blue);
-    margin-bottom: 0.3rem;
-  }
-  .fit__v {
-    margin: 0;
-    color: var(--ink);
-    font-size: var(--step--1);
-    line-height: 1.55;
-  }
-
-  @media (max-width: 640px) {
-    .fit {
+  @media (max-width: 780px) {
+    .picks__grid {
       grid-template-columns: 1fr;
     }
   }
 
-  .close__line {
+  .pick {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper-2);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--california-gold);
+    border-radius: 12px;
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .pick:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -24px rgba(0, 50, 98, 0.4);
+    border-top-color: var(--berkeley-blue);
+  }
+  .pick:hover .pick__title {
+    text-decoration-color: var(--california-gold);
+    text-decoration-thickness: 2px;
+  }
+
+  .pick__imgwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+  }
+  .pick__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .pick__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .pick__title {
     font-family: var(--serif);
     font-size: var(--step-1);
-    line-height: 1.45;
     color: var(--berkeley-blue);
-    max-width: var(--measure);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.18em;
+  }
+  .pick__text {
+    font-size: var(--step--1);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .credits {
+    margin-top: 0.6rem;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .credits a {
+    color: var(--muted);
   }
 </style>
