@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+import SheetEmbed from '../components/SheetEmbed.astro';
+
+const dropboxSrc =
+  "https://1drv.ms/x/c/1ab10ce1b91949c7/IQQrllCFDWAFR6IhtDzk43RIAVF-xxOswY-LxTKtQZmbXN8?em=2&AllowTyping=True&ActiveCell='Buyback'!B2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0";
+---
+
+<Base
+  title="Denise Lin: Dropbox Share Buyback Model"
+  description="Denise Lin — a live, interactive Dropbox share-buyback EPS and leverage sensitivity model, built for a Financial Information Analysis class."
+>
+  <header class="hero wrap wrap--wide">
+    <p class="eyebrow eyebrow--gold">Corporate Finance &middot; FP&amp;A</p>
+    <h1 class="hero__name">Denise Lin</h1>
+    <hr class="tick" />
+    <p class="hero__lede">
+      Berkeley Haas MBA with eight years owning budgets and cost performance
+      across complex, cross-functional programs. I direct a $5M+ portfolio at
+      the City of Mountain View: securing funding, tracking budgets, and
+      working with senior leadership to attain operational savings. Let me
+      show you how my financial planning and analysis skills can drive cost
+      savings, growth, and financial stability.
+    </p>
+  </header>
+
+  <section class="wrap wrap--wide portfolio" aria-labelledby="port-h">
+    <p class="eyebrow eyebrow--gold">Portfolio</p>
+    <h2 id="port-h" class="portfolio__h">
+      Dropbox: Share Buyback Sensitivity Model
+    </h2>
+    <p class="portfolio__intro">
+      The clearest way I can show how I think about a forecast is to hand you
+      the actual workbook. This is a model I built for Dropbox for my
+      Financial Information Analysis class. It&rsquo;s interactive, with the
+      dark blue font indicating hardcoded cells that change the model. Feel
+      free to change assumptions and see how the model responds.
+    </p>
+
+    <div class="spotlight spotlight--hero">
+      <div class="spotlight__copy">
+        <h3 class="spotlight__h">Share buyback</h3>
+        <p>
+          A Dropbox buyback of 10% of shares outstanding, debt-financed at a 10%
+          interest rate, lifts EPS only 1% while Debt/EBITDA jumps 16%. The
+          result is increased liability and balance-sheet risk for a negligible
+          per-share reward, making a debt-financed buyback unattractive at this
+          cost of debt.
+        </p>
+      </div>
+      <div class="spotlight__embed">
+        <SheetEmbed
+          hero={true}
+          height={520}
+          src={dropboxSrc}
+          title="Dropbox share-buyback EPS and leverage sensitivity model, built by Denise Lin"
+          caption="Live model: Dropbox share-buyback sensitivity"
+        />
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--wide">
+      <p class="contact">
+        <a href="mailto:deniselihanlin@gmail.com">deniselihanlin@gmail.com</a>
+        <span aria-hidden="true" class="dot">&middot;</span>
+        <a
+          href="https://www.linkedin.com/in/denise-lin"
+          rel="me noopener"
+          target="_blank">LinkedIn</a
+        >
+      </p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(3.5rem, 10vw, 6.5rem);
+    padding-bottom: clamp(0.25rem, 1.2vw, 0.6rem);
+  }
+  .hero__name {
+    font-size: var(--step-3);
+  }
+  .hero__lede {
+    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.22rem);
+    line-height: 1.5;
+    max-width: 70ch;
+    color: var(--ink);
+  }
+
+  .portfolio {
+    padding-block: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 4vw, 2.6rem);
+  }
+  .portfolio__h {
+    font-size: var(--step-2);
+    margin-bottom: 0.6rem;
+    max-width: none;
+  }
+  .portfolio__intro {
+    color: var(--muted);
+    max-width: 82ch;
+    margin-bottom: 2rem;
+  }
+
+  .spotlight {
+    padding: clamp(1.4rem, 3vw, 2.2rem);
+    background: var(--paper-2);
+    border-radius: 12px;
+    margin-bottom: 1.6rem;
+  }
+  .spotlight--hero {
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--california-gold);
+  }
+  .spotlight__copy > :first-child {
+    margin-top: 0;
+  }
+  .spotlight__copy p {
+    max-width: 82ch;
+  }
+  .spotlight__h {
+    font-size: var(--step-1);
+    color: var(--berkeley-blue);
+    margin-bottom: 0.8rem;
+  }
+  .spotlight__embed {
+    margin-top: 1.6rem;
+  }
+</style>
