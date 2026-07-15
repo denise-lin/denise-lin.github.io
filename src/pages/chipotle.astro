@@ -1,0 +1,171 @@
+---
+import Base from '../layouts/Base.astro';
+
+const cards = [
+  {
+    href: '/ford',
+    img: '/images/ford-logo.png',
+    imgAlt: 'Ford logo',
+    title: 'Ford Motor Co.: Financial Forecast Model',
+    body: 'I designed a multi-year financial forecast showing how I interpret historical financial statements and tune my model assumptions to project company performance.',
+  },
+  {
+    href: '/dropbox',
+    img: '/images/dropbox-logo.webp',
+    imgAlt: 'Dropbox logo',
+    title: 'Dropbox: Share Buyback Sensitivity Model',
+    body: 'I built a share buyback sensitivity model, showing how share buybacks impact earnings per share based on interest rate on debt and share price.',
+  },
+];
+---
+
+<Base title="Financial Analysis Projects" noindex={true}>
+  <header class="hero wrap wrap--wide">
+    <h1 class="hero__name">Denise Lin</h1>
+    <hr class="tick" />
+    <p class="hero__lede">
+      Eight years owning budgets and cost performance across complex,
+      cross-functional programs. I direct a $5M+ portfolio at the City of
+      Mountain View: securing funding, tracking budgets, and working with
+      senior leadership to attain operational savings. Now a Berkeley Haas
+      MBA, I&rsquo;m seeking a finance role at Chipotle because I&rsquo;ve
+      dedicated my career to building healthy communities, and Chipotle is
+      doing that through real food. Here are some of my financial analysis
+      projects.
+    </p>
+  </header>
+
+  <section class="wrap wrap--wide picks" aria-label="Project picks">
+    <div class="picks__grid">
+      {
+        cards.map((c) => (
+          <a class="pick" href={c.href}>
+            <span class="pick__imgwrap">
+              <img class="pick__img" src={c.img} alt={c.imgAlt} loading="lazy" />
+            </span>
+            <span class="pick__body">
+              <span class="pick__title">{c.title}</span>
+              <span class="pick__text">{c.body}</span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--wide">
+      <p class="contact">
+        <a href="mailto:deniselihanlin@gmail.com">deniselihanlin@gmail.com</a>
+        <span aria-hidden="true" class="dot">&middot;</span>
+        <a
+          href="https://www.linkedin.com/in/denise-lin"
+          rel="me noopener"
+          target="_blank">LinkedIn</a
+        >
+      </p>
+      <p class="credits">
+        Ford logo: <a href="https://en.wikipedia.org/wiki/Ford_of_Britain#/media/File:Ford_logo_flat.svg" rel="noopener" target="_blank">Wikipedia</a>
+        <span aria-hidden="true" class="dot">&middot;</span>
+        Dropbox logo: <a href="https://www.pcmag.com/reviews/dropbox" rel="noopener" target="_blank">PCMag</a>
+      </p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(3.5rem, 10vw, 6.5rem);
+    padding-bottom: clamp(0.25rem, 1.2vw, 0.6rem);
+  }
+  .hero__name {
+    font-size: var(--step-3);
+  }
+  .hero__lede {
+    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.22rem);
+    line-height: 1.5;
+    max-width: 70ch;
+    color: var(--ink);
+  }
+
+  .picks {
+    padding-block: clamp(1.5rem, 4vw, 2.6rem) clamp(2rem, 5vw, 3.5rem);
+  }
+  .picks__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+  }
+  @media (max-width: 780px) {
+    .picks__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pick {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper-2);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--california-gold);
+    border-radius: 12px;
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .pick:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -24px rgba(0, 50, 98, 0.4);
+    border-top-color: var(--berkeley-blue);
+  }
+  .pick:hover .pick__title {
+    text-decoration-color: var(--california-gold);
+    text-decoration-thickness: 2px;
+  }
+
+  .pick__imgwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+  }
+  .pick__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .pick__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .pick__title {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    color: var(--berkeley-blue);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.18em;
+  }
+  .pick__text {
+    font-size: var(--step--1);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .credits {
+    margin-top: 0.6rem;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .credits a {
+    color: var(--muted);
+  }
+</style>

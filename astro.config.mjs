@@ -7,8 +7,8 @@ export default defineConfig({
   site: 'https://deniselin.com',
   integrations: [
     sitemap({
-      // The /anduril application page is unlisted: keep it out of the sitemap.
-      filter: (page) => !page.includes('/anduril'),
+      // Company-specific application pages are unlisted: keep them out of the sitemap.
+      filter: (page) => !page.includes('/anduril') && !page.includes('/chipotle'),
     }),
   ],
 });
