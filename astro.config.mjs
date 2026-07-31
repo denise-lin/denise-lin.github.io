@@ -8,7 +8,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Company-specific application pages are unlisted: keep them out of the sitemap.
-      filter: (page) => !page.includes('/anduril') && !page.includes('/chipotle'),
+      filter: (page) =>
+        !page.includes('/anduril') &&
+        !page.includes('/chipotle') &&
+        !page.includes('/rocketlab'),
     }),
   ],
 });
