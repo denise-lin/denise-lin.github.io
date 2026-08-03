@@ -11,7 +11,8 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/anduril') &&
         !page.includes('/chipotle') &&
-        !page.includes('/rocketlab'),
+        !page.includes('/rocketlab') &&
+        !page.includes('/spacex'),
     }),
   ],
 });
