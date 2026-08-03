@@ -12,7 +12,8 @@ export default defineConfig({
         !page.includes('/anduril') &&
         !page.includes('/chipotle') &&
         !page.includes('/rocketlab') &&
-        !page.includes('/spacex'),
+        !page.includes('/spacex') &&
+        !page.includes('/neros'),
     }),
   ],
 });
