@@ -14,7 +14,8 @@ export default defineConfig({
         !page.includes('/rocketlab') &&
         !page.includes('/spacex') &&
         !page.includes('/neros') &&
-        !page.includes('/harbinger'),
+        !page.includes('/harbinger') &&
+        !page.includes('/hermeus'),
     }),
   ],
 });
