@@ -13,7 +13,8 @@ export default defineConfig({
         !page.includes('/chipotle') &&
         !page.includes('/rocketlab') &&
         !page.includes('/spacex') &&
-        !page.includes('/neros'),
+        !page.includes('/neros') &&
+        !page.includes('/harbinger'),
     }),
   ],
 });
