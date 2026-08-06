@@ -16,7 +16,8 @@ export default defineConfig({
         !page.includes('/neros') &&
         !page.includes('/harbinger') &&
         !page.includes('/hermeus') &&
-        !page.includes('/apex'),
+        !page.includes('/apex') &&
+        !page.includes('/compa'),
     }),
   ],
 });
