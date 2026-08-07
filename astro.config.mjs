@@ -18,7 +18,8 @@ export default defineConfig({
         !page.includes('/hermeus') &&
         !page.includes('/apex') &&
         !page.includes('/compa') &&
-        !page.includes('/revelyst'),
+        !page.includes('/revelyst') &&
+        !page.includes('/trueanomaly'),
     }),
   ],
 });
