@@ -17,7 +17,8 @@ export default defineConfig({
         !page.includes('/harbinger') &&
         !page.includes('/hermeus') &&
         !page.includes('/apex') &&
-        !page.includes('/compa'),
+        !page.includes('/compa') &&
+        !page.includes('/revelyst'),
     }),
   ],
 });
