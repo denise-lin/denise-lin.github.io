@@ -19,7 +19,8 @@ export default defineConfig({
         !page.includes('/apex') &&
         !page.includes('/compa') &&
         !page.includes('/revelyst') &&
-        !page.includes('/trueanomaly'),
+        !page.includes('/trueanomaly') &&
+        !page.includes('/emblamedical'),
     }),
   ],
 });
