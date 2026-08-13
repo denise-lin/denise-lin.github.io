@@ -20,7 +20,8 @@ export default defineConfig({
         !page.includes('/compa') &&
         !page.includes('/revelyst') &&
         !page.includes('/trueanomaly') &&
-        !page.includes('/emblamedical'),
+        !page.includes('/emblamedical') &&
+        !page.includes('/servicetitan'),
     }),
   ],
 });
