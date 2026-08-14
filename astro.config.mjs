@@ -21,7 +21,8 @@ export default defineConfig({
         !page.includes('/revelyst') &&
         !page.includes('/trueanomaly') &&
         !page.includes('/emblamedical') &&
-        !page.includes('/servicetitan'),
+        !page.includes('/servicetitan') &&
+        !page.includes('/singularity'),
     }),
   ],
 });
