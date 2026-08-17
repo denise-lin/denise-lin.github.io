@@ -23,7 +23,8 @@ export default defineConfig({
         !page.includes('/emblamedical') &&
         !page.includes('/servicetitan') &&
         !page.includes('/singularity') &&
-        !page.includes('/hireuc'),
+        !page.includes('/hireuc') &&
+        !page.includes('/EdwardsLifesciences'),
     }),
   ],
 });
