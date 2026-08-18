@@ -24,7 +24,8 @@ export default defineConfig({
         !page.includes('/servicetitan') &&
         !page.includes('/singularity') &&
         !page.includes('/hireuc') &&
-        !page.includes('/EdwardsLifesciences'),
+        !page.includes('/EdwardsLifesciences') &&
+        !page.includes('/cubicdefense'),
     }),
   ],
 });
