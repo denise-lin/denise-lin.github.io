@@ -25,7 +25,8 @@ export default defineConfig({
         !page.includes('/singularity') &&
         !page.includes('/hireuc') &&
         !page.includes('/EdwardsLifesciences') &&
-        !page.includes('/cubicdefense'),
+        !page.includes('/cubicdefense') &&
+        !page.includes('/hadrian'),
     }),
   ],
 });
