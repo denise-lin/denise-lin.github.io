@@ -27,7 +27,8 @@ export default defineConfig({
         !page.includes('/EdwardsLifesciences') &&
         !page.includes('/cubicdefense') &&
         !page.includes('/hadrian') &&
-        !page.includes('/steg.ai'),
+        !page.includes('/steg.ai') &&
+        !page.includes('/smithrx'),
     }),
   ],
 });
