@@ -28,7 +28,8 @@ export default defineConfig({
         !page.includes('/cubicdefense') &&
         !page.includes('/hadrian') &&
         !page.includes('/steg.ai') &&
-        !page.includes('/smithrx'),
+        !page.includes('/smithrx') &&
+        !page.includes('/divergent'),
     }),
   ],
 });
