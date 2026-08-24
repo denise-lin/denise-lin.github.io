@@ -30,7 +30,8 @@ export default defineConfig({
         !page.includes('/steg.ai') &&
         !page.includes('/smithrx') &&
         !page.includes('/divergent') &&
-        !page.includes('/metropolis'),
+        !page.includes('/metropolis') &&
+        !page.includes('/rula'),
     }),
   ],
 });
