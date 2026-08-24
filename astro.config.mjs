@@ -31,7 +31,8 @@ export default defineConfig({
         !page.includes('/smithrx') &&
         !page.includes('/divergent') &&
         !page.includes('/metropolis') &&
-        !page.includes('/rula'),
+        !page.includes('/rula') &&
+        !page.includes('/jetzero'),
     }),
   ],
 });
