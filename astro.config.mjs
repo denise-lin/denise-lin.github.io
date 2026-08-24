@@ -29,7 +29,8 @@ export default defineConfig({
         !page.includes('/hadrian') &&
         !page.includes('/steg.ai') &&
         !page.includes('/smithrx') &&
-        !page.includes('/divergent'),
+        !page.includes('/divergent') &&
+        !page.includes('/metropolis'),
     }),
   ],
 });
