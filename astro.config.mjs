@@ -32,7 +32,8 @@ export default defineConfig({
         !page.includes('/divergent') &&
         !page.includes('/metropolis') &&
         !page.includes('/rula') &&
-        !page.includes('/jetzero'),
+        !page.includes('/jetzero') &&
+        !page.includes('/wellfound'),
     }),
   ],
 });
