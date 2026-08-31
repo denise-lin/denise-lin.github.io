@@ -33,7 +33,8 @@ export default defineConfig({
         !page.includes('/metropolis') &&
         !page.includes('/rula') &&
         !page.includes('/jetzero') &&
-        !page.includes('/wellfound'),
+        !page.includes('/wellfound') &&
+        !page.includes('/nex'),
     }),
   ],
 });
