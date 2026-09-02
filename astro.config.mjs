@@ -36,7 +36,8 @@ export default defineConfig({
         !page.includes('/wellfound') &&
         !page.includes('/nex') &&
         !page.includes('/clearcapital') &&
-        !page.includes('/sproutsocial'),
+        !page.includes('/sproutsocial') &&
+        !page.includes('/AGIS'),
     }),
   ],
 });
