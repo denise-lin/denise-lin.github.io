@@ -35,7 +35,8 @@ export default defineConfig({
         !page.includes('/jetzero') &&
         !page.includes('/wellfound') &&
         !page.includes('/nex') &&
-        !page.includes('/clearcapital'),
+        !page.includes('/clearcapital') &&
+        !page.includes('/sproutsocial'),
     }),
   ],
 });
