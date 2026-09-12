@@ -37,7 +37,8 @@ export default defineConfig({
         !page.includes('/nex') &&
         !page.includes('/clearcapital') &&
         !page.includes('/sproutsocial') &&
-        !page.includes('/AGIS'),
+        !page.includes('/AGIS') &&
+        !page.includes('/lendistry'),
     }),
   ],
 });
