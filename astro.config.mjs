@@ -39,7 +39,8 @@ export default defineConfig({
         !page.includes('/sproutsocial') &&
         !page.includes('/AGIS') &&
         !page.includes('/lendistry') &&
-        !page.includes('/moxie'),
+        !page.includes('/moxie') &&
+        !page.includes('/relativityspace'),
     }),
   ],
 });
