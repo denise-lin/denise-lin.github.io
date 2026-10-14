@@ -40,7 +40,8 @@ export default defineConfig({
         !page.includes('/AGIS') &&
         !page.includes('/lendistry') &&
         !page.includes('/moxie') &&
-        !page.includes('/relativityspace'),
+        !page.includes('/relativityspace') &&
+        !page.includes('/rtx'),
     }),
   ],
 });
