@@ -41,7 +41,8 @@ export default defineConfig({
         !page.includes('/lendistry') &&
         !page.includes('/moxie') &&
         !page.includes('/relativityspace') &&
-        !page.includes('/rtx'),
+        !page.includes('/rtx') &&
+        !page.includes('/machindustries'),
     }),
   ],
 });
