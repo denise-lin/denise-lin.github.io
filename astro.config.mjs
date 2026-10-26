@@ -42,7 +42,8 @@ export default defineConfig({
         !page.includes('/moxie') &&
         !page.includes('/relativityspace') &&
         !page.includes('/rtx') &&
-        !page.includes('/machindustries'),
+        !page.includes('/machindustries') &&
+        !page.includes('/antares'),
     }),
   ],
 });
