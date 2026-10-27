@@ -43,7 +43,8 @@ export default defineConfig({
         !page.includes('/relativityspace') &&
         !page.includes('/rtx') &&
         !page.includes('/machindustries') &&
-        !page.includes('/antares'),
+        !page.includes('/antares') &&
+        !page.includes('/freeform'),
     }),
   ],
 });
