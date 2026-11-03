@@ -45,7 +45,8 @@ export default defineConfig({
         !page.includes('/machindustries') &&
         !page.includes('/antares') &&
         !page.includes('/freeform') &&
-        !page.includes('/aecom'),
+        !page.includes('/aecom') &&
+        !page.includes('/furientis'),
     }),
   ],
 });
