@@ -47,7 +47,8 @@ export default defineConfig({
         !page.includes('/freeform') &&
         !page.includes('/aecom') &&
         !page.includes('/furientis') &&
-        !page.includes('/transgridenergy'),
+        !page.includes('/transgridenergy') &&
+        !page.includes('/walmart'),
     }),
   ],
 });
