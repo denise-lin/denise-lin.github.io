@@ -48,7 +48,8 @@ export default defineConfig({
         !page.includes('/aecom') &&
         !page.includes('/furientis') &&
         !page.includes('/transgridenergy') &&
-        !page.includes('/walmart'),
+        !page.includes('/walmart') &&
+        !page.includes('/generalmatter'),
     }),
   ],
 });
