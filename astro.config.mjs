@@ -49,7 +49,8 @@ export default defineConfig({
         !page.includes('/furientis') &&
         !page.includes('/transgridenergy') &&
         !page.includes('/walmart') &&
-        !page.includes('/generalmatter'),
+        !page.includes('/generalmatter') &&
+        !page.includes('/thermofisherscientific'),
     }),
   ],
 });
