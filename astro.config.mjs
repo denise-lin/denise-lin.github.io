@@ -50,7 +50,8 @@ export default defineConfig({
         !page.includes('/transgridenergy') &&
         !page.includes('/walmart') &&
         !page.includes('/generalmatter') &&
-        !page.includes('/thermofisherscientific'),
+        !page.includes('/thermofisherscientific') &&
+        !page.includes('/dragos'),
     }),
   ],
 });
