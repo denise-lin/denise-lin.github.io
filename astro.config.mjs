@@ -51,7 +51,8 @@ export default defineConfig({
         !page.includes('/walmart') &&
         !page.includes('/generalmatter') &&
         !page.includes('/thermofisherscientific') &&
-        !page.includes('/dragos'),
+        !page.includes('/dragos') &&
+        !page.includes('/mercurysystems'),
     }),
   ],
 });
