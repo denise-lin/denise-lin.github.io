@@ -52,7 +52,8 @@ export default defineConfig({
         !page.includes('/generalmatter') &&
         !page.includes('/thermofisherscientific') &&
         !page.includes('/dragos') &&
-        !page.includes('/mercurysystems'),
+        !page.includes('/mercurysystems') &&
+        !page.includes('/cvshealth'),
     }),
   ],
 });
