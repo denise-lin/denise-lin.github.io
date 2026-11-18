@@ -53,7 +53,8 @@ export default defineConfig({
         !page.includes('/thermofisherscientific') &&
         !page.includes('/dragos') &&
         !page.includes('/mercurysystems') &&
-        !page.includes('/cvshealth'),
+        !page.includes('/cvshealth') &&
+        !page.includes('/coursera'),
     }),
   ],
 });
