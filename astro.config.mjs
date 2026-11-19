@@ -54,7 +54,8 @@ export default defineConfig({
         !page.includes('/dragos') &&
         !page.includes('/mercurysystems') &&
         !page.includes('/cvshealth') &&
-        !page.includes('/coursera'),
+        !page.includes('/coursera') &&
+        !page.includes('/testcompany'),
     }),
   ],
 });
