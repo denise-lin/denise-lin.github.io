@@ -55,7 +55,8 @@ export default defineConfig({
         !page.includes('/mercurysystems') &&
         !page.includes('/cvshealth') &&
         !page.includes('/coursera') &&
-        !page.includes('/testcompany'),
+        !page.includes('/testcompany') &&
+        !page.includes('/scopely'),
     }),
   ],
 });
